@@ -1,0 +1,6 @@
+var socket = require('socket.io-client')('https://ws.nbeep.net/ws')
+socket.on('connect', function (e) { console.log(e) })
+socket.on('event', function (data) { console.log(data) })
+socket.on('message', message => console.log(message))
+socket.on('disconnect', function () {})
+socket.emit('message', '123')
